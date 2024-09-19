@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
           from: "random",
         },
         onComplete: () => {
-          pageTransition.style.display = "none";
+          pageTransitionItems.style.display = "none";
         },
       }, '<');
 
