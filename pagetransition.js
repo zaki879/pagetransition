@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
       })
       .to(pageTransitionItems, {
         y: "-20vh",
-        duration: 1,
+        duration: 2,
         ease: "expo.inOut",
         stagger: {
           amount: 0.1,
