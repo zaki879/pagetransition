@@ -4,8 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const pageTransition = document.querySelector(".new-page-transition");
     const pageTransitionItems = document.querySelectorAll(".hero-page-transition_item");
 
-    // Only run the animation if these elements exist
-    if (mainwrap && pageTransition && pageTransitionItems.length > 0) {
       const PageIn = gsap.timeline();
       PageIn
         .from(mainwrap, {
@@ -30,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
             this.hostname === window.location.hostname &&
             this.href.indexOf("#") === -1 &&
             this.getAttribute("target") !== "_blank"
-          ) {
+          ) 
             e.preventDefault();
             let destination = this.href;
 
@@ -45,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
               },
               {
                 y: "0vh",
-                duration: 2,
+                duration: 1,
                 ease: "expo.inOut",
                 stagger: {
                   amount: 0.1,
@@ -56,10 +54,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 },
               }
             );
-          }
+          
         });
       });
-    }
+    
   }
 
   // Function to reset Webflow interactions and run the animation
