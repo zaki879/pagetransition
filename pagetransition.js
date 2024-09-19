@@ -20,7 +20,10 @@ document.addEventListener("DOMContentLoaded", function () {
           amount: 0.1,
           from: "random",
         },
-      }, '<');
+        onComplete: () => {
+          pageTransition.style.display = "none";
+
+        },      }, '<');
   
     const links = document.querySelectorAll(".nav_menu_link");
     links.forEach((link) => {
