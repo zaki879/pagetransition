@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
           let destination = this.href;
 
           // Show the transition
-          pageTransition.style.display = "none";
+          pageTransition.style.display = "grid";
 
           // Animate the transition
           PageIn.fromTo(
