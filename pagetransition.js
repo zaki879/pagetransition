@@ -28,7 +28,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const links = document.querySelectorAll(".nav_menu_link");
     links.forEach((link) => {
       link.addEventListener("click", function (e) {
-       
+        e.preventDefault();
+
           let destination = this.href;
 
           // Show the transition
