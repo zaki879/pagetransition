@@ -20,22 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
           // Show the transition
           pageTransition.style.display = "grid";
-          const PageIn = gsap.timeline();
-          PageIn
-            .from(mainwrap, {
-              y: "50vh",
-              duration: 1.25,
-              ease: "expo.inOut",
-            })
-            .to(pageTransitionItems, {
-              y: "-100vh",
-              duration: 1,
-              ease: "expo.inOut",
-              stagger: {
-                amount: 0.1,
-                from: "random",
-              },
-            }, '<');
+      
           // Animate the transition
           gsap.fromTo(
             pageTransitionItems,
