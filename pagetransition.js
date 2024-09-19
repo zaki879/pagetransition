@@ -1,17 +1,14 @@
 const mainwrap = document.querySelector(".main-wrapper");
 const pageTransition = document.querySelector(".new-page-transition");
-const pageTransitionItems = document.querySelectorAll(
-  ".hero-page-transition_item"
-);
+const pageTransitionItems = document.querySelectorAll(".hero-page-transition_item");
 
-const tlPageIn = gsap.timeline();
-tlPageIn
+const PageIn = gsap.timeline();
+PageIn
   .from(mainwrap, {
     y: "50vh",
     duration: 1.25,
     ease: "expo.inOut",
   })
-
   .to(pageTransitionItems, {
     y: "-100vh",
     duration: 1,
