@@ -3,8 +3,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const pageTransition = document.querySelector(".new-page-transition");
   const pageTransitionItems = document.querySelectorAll(".hero-page-transition_item");
 
+  // Check if elements exist on the page
   if (mainwrap && pageTransition && pageTransitionItems.length > 0) {
-    // Page load animation (initial entrance)
+    // Initial page load animation
     const PageIn = gsap.timeline();
     PageIn
       .from(mainwrap, {
@@ -22,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
       }, '<');
 
-    // Handle link clicks
+    // Handle link clicks for navigation
     const links = document.querySelectorAll("a");
     links.forEach((link) => {
       link.addEventListener("click", function (e) {
@@ -34,13 +35,16 @@ document.addEventListener("DOMContentLoaded", function () {
           e.preventDefault(); // Prevent default navigation
           const destination = this.href; // Store the target URL
 
-          // Reset the pageTransition display and items
+          // Reset styles to ensure a fresh start for the transition
+          gsap.set(pageTransitionItems, { clearProps: "all" });
+
+          // Show the transition
           pageTransition.style.display = "grid"; // Make sure the transition is visible
 
-          // Create a new timeline for the page exit animation
+          // Create a new timeline for page exit animation
           const PageOut = gsap.timeline({
             onComplete: function () {
-              window.location = destination; // Navigate to the new page when animation is done
+              window.location = destination; // Navigate to the new page after animation
             }
           });
 
