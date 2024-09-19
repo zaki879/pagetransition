@@ -36,7 +36,7 @@ links.forEach((link) => {
       },
       {
         y: "0vh",
-        duration:0.9,
+        duration:0.7,
         ease: "expo.inOut",
         stagger: {
           amount: 0.1,
