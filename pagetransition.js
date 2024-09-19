@@ -6,7 +6,11 @@ document.addEventListener("DOMContentLoaded", function () {
   // Only run the animation if these elements exist
   if (mainwrap && pageTransition && pageTransitionItems.length > 0) {
     const PageIn = gsap.timeline();
-    PageIn
+  
+  
+    const links = document.querySelectorAll("a");
+    links.forEach((link) => {
+      PageIn
       .from(mainwrap, {
         y: "50vh",
         duration: 1.25,
@@ -21,9 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
           from: "random",
         },
       }, '<');
-  
-    const links = document.querySelectorAll("a");
-    links.forEach((link) => {
       link.addEventListener("click", function (e) {
         if (
           this.hostname === window.location.hostname &&
