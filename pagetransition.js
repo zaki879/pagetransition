@@ -40,10 +40,10 @@ document.addEventListener("DOMContentLoaded", function () {
           gsap.fromTo(
             pageTransitionItems,
             {
-              y: "100vh",
+              y: "0vh",
             },
             {
-              y: "0vh",
+              y: "100vh",
               duration: 0.5,
               ease: "expo.inOut",
               stagger: {
