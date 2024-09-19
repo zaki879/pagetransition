@@ -14,12 +14,15 @@ document.addEventListener("DOMContentLoaded", function () {
         ease: "expo.inOut",
       })
       .to(pageTransitionItems, {
-        y: "-20vh",
+        y: "-100vh",
         duration: 2,
         ease: "expo.inOut",
         stagger: {
           amount: 0.1,
           from: "random",
+        },
+        onComplete: () => {
+          pageTransition.style.display = "none";
         },
       }, '<');
 
