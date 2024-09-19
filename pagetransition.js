@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
       }, '<');
   
-    const links = document.querySelectorAll(".nav_menu_link");
+    const links = document.querySelectorAll("a");
     links.forEach((link) => {
       link.addEventListener("click", function (e) {
         if (
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
           // Show the transition
           pageTransition.style.display = "grid";
 
-          // Animate the transition before navigating
+          // Animate the transition
           gsap.fromTo(
             pageTransitionItems,
             {
@@ -51,6 +51,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 from: "random",
               },
               onComplete: () => {
+                console.log('====================================');
+                console.log(destination);
+                console.log('====================================');
                 window.location = destination;
               },
             }
@@ -59,20 +62,4 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   }
-
-  // Handle page transition when user leaves
-  window.addEventListener('beforeunload', function (e) {
-    e.preventDefault();
-
-    // Start the animation before leaving the page
-    gsap.to(pageTransitionItems, {
-      y: "0vh",
-      duration: 1,
-      ease: "expo.inOut",
-      stagger: {
-        amount: 0.1,
-        from: "random",
-      },
-    });
-  });
 });
