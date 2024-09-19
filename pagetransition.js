@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
           let destination = this.href;
 
           // Show the transition
-          pageTransition.style.display = "grid";
+          pageTransition.style.display = "none";
 
           // Animate the transition
           PageIn.fromTo(
@@ -44,13 +44,16 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             {
               y: "0vh",
-              duration: 1,
+              duration: 2,
               ease: "expo.inOut",
               stagger: {
                 amount: 0.1,
                 from: "random",
               },
               onComplete: () => {
+                console.log('====================================');
+                console.log(destination);
+                console.log('====================================');
                 window.location = destination;
               },
             }
