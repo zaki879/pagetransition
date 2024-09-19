@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
       }, '<');
   
-    const links = document.querySelectorAll("a");
+    const links = document.querySelectorAll(".nav_menu_link");
     links.forEach((link) => {
       link.addEventListener("click", function (e) {
         if (
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
           pageTransition.style.display = "grid";
 
           // Animate the transition
-          PageIn.fromTo(
+          gsap.fromTo(
             pageTransitionItems,
             {
               y: "100vh",
