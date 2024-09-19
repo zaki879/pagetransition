@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
         duration: 1.25,
         ease: "expo.inOut",
       })
-      .to(pageTransitionItems, {
+      .to(mainwrap, {
         y: "-100vh",
         duration: 1,
         ease: "expo.inOut",
