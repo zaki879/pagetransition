@@ -20,22 +20,23 @@ document.addEventListener("DOMContentLoaded", function () {
           amount: 0.1,
           from: "random",
         },
-        onComplete: () => {
-          pageTransitionItems.style.display = "none";
-
-        },      }, '<');
+      }, '<');
   
     const links = document.querySelectorAll(".nav_menu_link");
     links.forEach((link) => {
       link.addEventListener("click", function (e) {
-        e.preventDefault();
-
+        if (
+          this.hostname === window.location.hostname &&
+          this.href.indexOf("#") === -1 &&
+          this.getAttribute("target") !== "_blank"
+        ) {
+          e.preventDefault();
           let destination = this.href;
 
           // Show the transition
           pageTransition.style.display = "grid";
 
-          // Animate the transition
+          // Animate the transition before navigating
           gsap.fromTo(
             pageTransitionItems,
             {
@@ -50,15 +51,28 @@ document.addEventListener("DOMContentLoaded", function () {
                 from: "random",
               },
               onComplete: () => {
-                console.log('====================================');
-                console.log(destination);
-                console.log('====================================');
                 window.location = destination;
               },
             }
           );
-        
+        }
       });
     });
   }
+
+  // Handle page transition when user leaves
+  window.addEventListener('beforeunload', function (e) {
+    e.preventDefault();
+
+    // Start the animation before leaving the page
+    gsap.to(pageTransitionItems, {
+      y: "0vh",
+      duration: 1,
+      ease: "expo.inOut",
+      stagger: {
+        amount: 0.1,
+        from: "random",
+      },
+    });
+  });
 });
