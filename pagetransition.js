@@ -3,6 +3,7 @@ const pageTransition = document.querySelector(".new-page-transition");
 const pageTransitionItems = document.querySelectorAll(
   ".hero-page-transition_item"
 );
+pageTransition.style.display = "grid";
 
 const PageIn = gsap.timeline();
 PageIn.from(mainwrap, {
@@ -32,7 +33,7 @@ links.forEach((link) => {
     )
       e.preventDefault();
     let destination = this.href;
-    pageTransition.style.display = "none";
+    pageTransition.style.display = "grid";
     PageIn.fromTo(
       pageTransitionItems,
       {
