@@ -1,6 +1,6 @@
 const pageTransition = document.querySelector(".new-page-transition");
 const pageTransitionItems = document.querySelectorAll(
-  ".new-page-transition_item"
+  ".hero-page-transition_item"
 );
 
 const links = document.querySelectorAll("a");
