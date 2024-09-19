@@ -32,7 +32,7 @@ links.forEach((link) => {
     )
       e.preventDefault();
     let destination = this.href;
-    pageTransition.style.display = "grid";
+    pageTransition.style.display = "none";
     PageIn.fromTo(
       pageTransitionItems,
       {
