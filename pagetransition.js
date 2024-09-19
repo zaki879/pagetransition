@@ -22,7 +22,7 @@ const links = document.querySelectorAll("a");
 links.forEach((link) => {
   link.addEventListener("click", function (e) {
     if (
-      
+      this.hostname === window.location.hostname &&
       this.href.indexOf("#") === -1 &&
       this.getAttribute("target") !== "_blank"
     )
@@ -35,7 +35,7 @@ links.forEach((link) => {
         y: "100vh",
       },
       {
-        y: "0vh",
+        y: "2vh",
         duration: 1,
         ease: "expo.inOut",
         stagger: {
