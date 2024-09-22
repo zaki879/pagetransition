@@ -17,24 +17,16 @@ PageIn
       amount: 0.1,
       from: "random",
     },
-  }, '<');
-
+  },'<');
 const links = document.querySelectorAll("a");
 links.forEach((link) => {
   link.addEventListener("click", function (e) {
-    const linkHref = this.getAttribute("href");
-
-    // Exclude links that match the specific href
     if (
-      linkHref.includes("?ed3610c8_page=") || // Exclude links with ?ed3610c8_page query
-      this.hostname !== window.location.hostname ||
-      linkHref.indexOf("#") !== -1 ||
-      this.getAttribute("target") === "_blank"
-    ) {
-      return; // Do nothing for excluded links
-    }
-
-    e.preventDefault();
+      this.hostname === window.location.hostname &&
+      this.href.indexOf("#") === -1 &&
+      this.getAttribute("target") !== "_blank"
+    )
+      e.preventDefault();
     let destination = this.href;
     pageTransition.style.display = "grid";
     PageIn.fromTo(
@@ -44,7 +36,7 @@ links.forEach((link) => {
       },
       {
         y: "0vh",
-        duration: 0.7,
+        duration:0.7,
         ease: "expo.inOut",
         stagger: {
           amount: 0.1,
