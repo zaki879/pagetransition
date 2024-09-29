@@ -26,7 +26,7 @@ links.forEach((link) => {
 
     // Exclude links that match the specific href
     if (
-      linkHref.includes("?4ba01cff_page=") || // Exclude links with ?ed3610c8_page query
+      linkHref.includes("?") || // Exclude links with ?ed3610c8_page query
       this.hostname !== window.location.hostname ||
       linkHref.indexOf("#") !== -1 ||
       this.getAttribute("target") === "_blank"
